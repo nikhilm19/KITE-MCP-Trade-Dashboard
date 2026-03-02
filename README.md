@@ -66,6 +66,6 @@ node server.js
 - `public/`: Frontend assets (Dashboard UI).
 - `data/`: Processed JSON results used by the terminal.
 - `histdata/`: Local storage for symbol-wise historical candles.
-
+![alt text](image.png)
 ---
 *Disclaimer: This tool is for informational purposes only. Always validate setups with your own analysis before trading.*
