@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PULSTA Terminal</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">PULSTA <span class="version">PRO</span></div>
+        <div class="last-updated" id="last-updated">--:--</div>
+      </div>
+      <div class="market-status" id="market-status">Loading Market Data...</div>
+      <div class="trigger-group">
+        <select id="refresh-period" class="period-select">
+          <option value="0">Manual Only</option>
+          <option value="5">5 Mins</option>
+          <option value="15">15 Mins</option>
+          <option value="30">30 Mins</option>
+          <option value="60">1 Hour</option>
+        </select>
+        <button class="btn refresh-btn" onclick="init()">⟳ Refresh</button>
+      </div>
+    </header>
+
+    <div class="stats-bar" id="stats-bar">
+      <!-- Nifty Technicals injected here -->
+    </div>
+
+    <section class="strategies-panel" id="strategies-panel">
+      <div class="panel-header" onclick="toggleStrategies()">
+        <h3>Strategy Checks</h3>
+        <span class="toggle-icon" id="strategy-toggle-icon">−</span>
+      </div>
+      <div id="strategy-content">
+        <div id="strategy-summary" class="strategy-summary"></div>
+        <table class="strategies-table">
+        <thead>
+          <tr>
+            <th>Symbol</th>
+            <th>Holding</th>
+            <th>Signals</th>
+          </tr>
+        </thead>
+        <tbody id="strategy-table-body">
+          <tr><td colspan="3">Loading...</td></tr>
+        </tbody>
+      </table>
+      <div id="strategy-list">Loading strategy checks...</div>
+      </div>
+    </section>
+
+    <div class="controls">
+      <div class="filter-group">
+        <button class="btn active" onclick="filterSetups('all', this)">All Setups</button>
+        <button class="btn" onclick="filterSetups('BULLISH', this)">Bullish</button>
+        <button class="btn" onclick="filterSetups('BEARISH', this)">Bearish</button>
+        <button class="btn" onclick="filterSetups('Breakout', this)">Breakouts</button>
+      </div>
+    </div>
+
+    <main class="grid" id="setups-grid">
+      <!-- Cards injected here -->
+    </main>
+
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-header" id="modal-header">
+          <!-- Injected via JS -->
+        </div>
+        <div class="modal-body" id="modal-body">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="dashboard.js"></script>
+</body>
+</html>
